@@ -19,7 +19,7 @@ const ServicePreview = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-beige">
+    <section ref={ref} className="section-padding bg-beige-light">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,6 +49,7 @@ const ServicePreview = () => {
                 <img
                   src={image}
                   alt={`Service ${index + 1}`}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>

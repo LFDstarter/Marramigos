@@ -1,0 +1,14 @@
+# Sans ce fichier, Netlify publiait la racine du depot telle quelle :
+# l'index.html source pointe vers /src/main.tsx, d'ou la page blanche.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Routage cote client (react-router) : toute URL renvoie l'application
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

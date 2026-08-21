@@ -22,8 +22,6 @@ export const fr = {
 
   // Services Section
   servicesTitle: "NOS PRESTATIONS",
-  chefPriveTitle: "Chef Privé à Domicile",
-  chefPriveDescription: "Vivez une expérience gastronomique unique dans le confort de votre maison. Notre Chef s'occupe de tout, de la conception du menu au service.",
   eventsTitle: "Événements Sur Mesure",
   eventsDescription: "Mariages, anniversaires, baby-showers ou soirées d'entreprise : nous créons des moments mémorables adaptés à chaque occasion.",
   consultingTitle: "Consulting Culinaire",
