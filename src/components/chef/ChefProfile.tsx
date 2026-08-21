@@ -9,17 +9,17 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 const galleryImages = [
   {
     id: 1,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/le_chef/image16.jpg?v=2',
+    src: '/photos/le_chef/image16.jpg',
     alt: 'Entrée gastronomique'
   },
   {
     id: 2,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/le_chef/image17.jpg?v=2',
+    src: '/photos/le_chef/image17.jpg',
     alt: 'Plat gastronomique'
   },
   {
     id: 3,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/le_chef/image18.jpg?v=2',
+    src: '/photos/le_chef/image18.jpg',
     alt: 'Adrian & celine'
   }
 ];
@@ -88,7 +88,7 @@ const ChefProfile = () => {
           >
             <div className="aspect-[3/4] w-full max-w-[500px] mx-auto">
               <img 
-                src="https://red-scorpion-816387.hostingersite.com/Marramigos/photos/le_chef/le_chef.jpg?v=2" 
+                src="/photos/le_chef/le_chef.jpg" 
                 alt="Chef Adrien Chamy" 
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -125,7 +125,8 @@ const ChefProfile = () => {
             >
               <div className="aspect-[4/3] w-full max-w-[400px] mx-auto">
                 <img 
-                  src={image.src} 
+                  src={image.src}
+                loading="lazy" 
                   alt={image.alt} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
@@ -154,7 +155,7 @@ const ChefProfile = () => {
               </button>
               
               <button 
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
+                className="absolute bottom-6 left-[calc(50%-4.5rem)] sm:bottom-auto sm:left-4 sm:top-1/2 sm:-translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
                 onClick={(e) => { e.stopPropagation(); prevImage(); }}
               >
                 <ChevronLeft size={30} />
@@ -162,11 +163,11 @@ const ChefProfile = () => {
               
               <motion.img 
                 src={selectedImage === 0 
-                  ? "https://red-scorpion-816387.hostingersite.com/Marramigos/photos/le_chef/le_chef.jpg?v=2"
+                  ? "/photos/le_chef/le_chef.jpg"
                   : galleryImages[selectedImage - 1].src
                 } 
                 alt="Image en plein écran"
-                className="max-h-[90vh] max-w-[90vw] object-contain"
+                className="max-h-[74vh] sm:max-h-[90vh] max-w-[92vw] sm:max-w-[90vw] object-contain"
                 onClick={(e) => e.stopPropagation()}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -175,7 +176,7 @@ const ChefProfile = () => {
               />
               
               <button 
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
+                className="absolute bottom-6 right-[calc(50%-4.5rem)] sm:bottom-auto sm:right-4 sm:top-1/2 sm:-translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
                 onClick={(e) => { e.stopPropagation(); nextImage(); }}
               >
                 <ChevronRight size={30} />

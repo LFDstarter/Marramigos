@@ -21,6 +21,9 @@ const Header = () => {
 
   const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    // fermer le menu mobile : sur la page d'accueil l'URL ne change pas,
+    // l'effet lie a `location` ne se declenche donc pas
+    setIsMobileMenuOpen(false);
     if (location.pathname === '/') {
       // If we're on the home page, just scroll to the section
       const element = document.getElementById('nos-prestations');
@@ -55,7 +58,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="z-10">
           <img 
-            src="https://red-scorpion-816387.hostingersite.com/Marramigos/logo/logo.png" 
+            src="/logo/logo.png" 
             alt="Marramigos" 
             className="h-14 md:h-16"
           />

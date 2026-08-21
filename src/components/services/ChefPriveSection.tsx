@@ -23,15 +23,15 @@ const menus = [
 
 const plateImages = [
   {
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/chef_privee_a_domicile/image6.jpg',
+    src: '/photos/chef_privee_a_domicile/image6.jpg',
     alt: 'Plat gastronomique 1'
   },
   {
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/chef_privee_a_domicile/image7.jpg',
+    src: '/photos/chef_privee_a_domicile/image7.jpg',
     alt: 'Plat gastronomique 2'
   },
   {
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/chef_privee_a_domicile/image8.jpg',
+    src: '/photos/chef_privee_a_domicile/image8.jpg',
     alt: 'Plat gastronomique 3'
   }
 ];
@@ -69,7 +69,7 @@ const ChefPriveSection = () => {
           className="text-center"
         >
           <img 
-            src="https://red-scorpion-816387.hostingersite.com/Marramigos/logo/logo.png"
+            src="/logo/logo.png"
             alt="Marramigos"
             className="h-24 mx-auto mb-8"
           />
@@ -77,22 +77,21 @@ const ChefPriveSection = () => {
           <div className="w-24 h-0.5 bg-terracotta mx-auto mb-12"></div>
         </motion.div>
 
-        <div className="hidden md:grid md:grid-cols-3 gap-6 mb-16">
+        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 mb-16 -mx-4 px-4 md:mx-0 md:px-0 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none">
           {plateImages.map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="rounded-lg overflow-hidden shadow-lg"
+              className="shrink-0 w-[78%] sm:w-[58%] md:w-auto snap-center rounded-lg overflow-hidden shadow-lg"
             >
-              <div className="aspect-w-16 aspect-h-9">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+              <img 
+                src={image.src} 
+                alt={image.alt} 
+                loading="lazy"
+                className="w-full h-56 md:h-64 object-cover"
+              />
             </motion.div>
           ))}
         </div>
@@ -140,7 +139,7 @@ const ChefPriveSection = () => {
               <p className="text-sm text-center text-textMedium mb-6">{t('menuDescription')}</p>
               <div className="flex justify-end">
                 <img 
-                  src="https://red-scorpion-816387.hostingersite.com/Marramigos/logo/logo.png"
+                  src="/logo/logo.png"
                   alt="Marramigos"
                   className="h-16"
                 />

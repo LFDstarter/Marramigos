@@ -45,7 +45,7 @@ const Introduction = () => {
             className="rounded-lg overflow-hidden shadow-xl"
           >
             <img 
-              src="https://red-scorpion-816387.hostingersite.com/Marramigos/photos/presentation/image0.jpg?v=2" 
+              src="/photos/presentation/image0.jpg" 
               alt="Plat gastronomique" 
               className="w-full h-auto object-cover"
             />

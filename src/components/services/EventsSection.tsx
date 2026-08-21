@@ -9,22 +9,22 @@ import { useTranslation } from '../../hooks/useTranslation';
 const eventImages = [
   {
     id: 1,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/evenements/image11.jpg',
+    src: '/photos/evenements/image11.jpg',
     alt: 'Événement sur mesure'
   },
   {
     id: 2,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/evenements/image12.jpg',
+    src: '/photos/evenements/image12.jpg',
     alt: 'Événement privé'
   },
   {
     id: 3,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/evenements/image13.jpg',
+    src: '/photos/evenements/image13.jpg',
     alt: 'Célébration festive'
   },
   {
     id: 4,
-    src: 'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/evenements/image14.jpg',
+    src: '/photos/evenements/image14.jpg',
     alt: 'Événement d\'entreprise'
   }
 ];
@@ -120,6 +120,7 @@ const EventsSection = () => {
                     <img 
                       src={image.src} 
                       alt={image.alt} 
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
                   </div>
@@ -145,7 +146,7 @@ const EventsSection = () => {
             </button>
             
             <button 
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
+              className="absolute bottom-6 left-[calc(50%-4.5rem)] sm:bottom-auto sm:left-4 sm:top-1/2 sm:-translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
             >
               <ChevronLeft size={30} />
@@ -154,12 +155,12 @@ const EventsSection = () => {
             <img 
               src={eventImages[selectedImage].src} 
               alt={eventImages[selectedImage].alt} 
-              className="max-h-[90vh] max-w-[90vw] object-contain"
+              className="max-h-[74vh] sm:max-h-[90vh] max-w-[92vw] sm:max-w-[90vw] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
             
             <button 
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
+              className="absolute bottom-6 right-[calc(50%-4.5rem)] sm:bottom-auto sm:right-4 sm:top-1/2 sm:-translate-y-1/2 text-white p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all"
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
             >
               <ChevronRight size={30} />

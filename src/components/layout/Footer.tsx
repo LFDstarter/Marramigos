@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <Link to="/">
               <img 
-                src="https://red-scorpion-816387.hostingersite.com/Marramigos/logo/logo_white.png" 
+                src="/logo/logo_white.png" 
                 alt="Marramigos" 
                 className="h-20 mb-4"
               />

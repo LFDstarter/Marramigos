@@ -13,9 +13,9 @@ const ServicePreview = () => {
   const { t } = useTranslation(language);
 
   const images = [
-    'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/proposition/image1.jpg',
-    'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/proposition/image2.jpg',
-    'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/proposition/image3.jpg'
+    '/photos/proposition/image1.jpg',
+    '/photos/proposition/image2.jpg',
+    '/photos/proposition/image3.jpg'
   ];
 
   return (

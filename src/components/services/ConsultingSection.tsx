@@ -4,8 +4,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const consultingImages = [
-  'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/consulting/image4.jpg',
-  'https://red-scorpion-816387.hostingersite.com/Marramigos/photos/consulting/image5.jpg'
+  '/photos/consulting/image4.jpg',
+  '/photos/consulting/image5.jpg'
 ];
 
 const ConsultingSection = () => {
@@ -52,7 +52,8 @@ const ConsultingSection = () => {
           >
             <div className="aspect-w-16 aspect-h-9">
               <img 
-                src={consultingImages[0]} 
+                src={consultingImages[0]}
+                loading="lazy" 
                 alt="Consulting culinaire" 
                 className="w-full h-full object-cover"
               />
@@ -69,7 +70,8 @@ const ConsultingSection = () => {
           >
             <div className="aspect-w-16 aspect-h-9">
               <img 
-                src={consultingImages[1]} 
+                src={consultingImages[1]}
+                loading="lazy" 
                 alt="Consulting culinaire" 
                 className="w-full h-full object-cover"
               />

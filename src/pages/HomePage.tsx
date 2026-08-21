@@ -25,7 +25,7 @@ const HomePage = () => {
     <main>
       <Hero />
       <Introduction />
-      <div id="nos-prestations">
+      <div id="nos-prestations" className="scroll-mt-[88px] lg:scroll-mt-24">
         <ChefPriveSection />
         <EventsSection />
         <ConsultingSection />

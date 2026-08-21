@@ -16,10 +16,12 @@ const Hero = () => {
           muted 
           loop 
           playsInline
+          preload="auto"
+          poster="/video/hero-poster.jpg"
           className="object-cover w-full h-full"
         >
           <source 
-            src="https://red-scorpion-816387.hostingersite.com/Marramigos/video/Video.mov" 
+            src="/video/hero.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
