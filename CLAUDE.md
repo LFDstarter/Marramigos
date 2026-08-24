@@ -44,3 +44,23 @@ Ce projet est suivi dans LFD-client (slug: `marramigos`) — https://lfd-client.
 - Cocher une tâche / demande client : `curl -s -H "X-LFD-Code: $(cat ~/.claude/lfd-code)" https://lfd-client.pages.dev/api/tasks/<id> -X PATCH -H "Content-Type: application/json" -d '{"done":true}'`
 - Résumé de session : `curl -s -H "X-LFD-Code: $(cat ~/.claude/lfd-code)" https://lfd-client.pages.dev/api/projects/marramigos/sessions -X POST -H "Content-Type: application/json" -d '{"title":"...","summary":"## Fait\n- ...\n## Reste\n- ..."}'`
 - Corriger / supprimer un résumé : `curl -s -H "X-LFD-Code: $(cat ~/.claude/lfd-code)" https://lfd-client.pages.dev/api/sessions/<id> -X PATCH -H "Content-Type: application/json" -d '{"summary":"..."}'` (ou `-X DELETE`)
+
+---
+
+## Sauvegarde Git — règle absolue, à rappeler à chaque session
+
+Un projet perdu est une catastrophe. Le dépôt GitHub est la sécurité minimale : sans lui, une panne de la machine efface tout le travail. Cette règle passe avant le confort et avant la tâche en cours.
+
+### Au début de chaque session
+1. `git remote -v` — le projet a-t-il un dépôt distant ?
+2. Si non : le signaler immédiatement et proposer d'en créer un sous le compte `LFDstarter` (connexion SSH déjà configurée), nom simple sans tiret. Écrire un `.gitignore` correct avant le premier commit.
+3. Si oui : `git status` et `git rev-list --count origin/<branche>..HEAD` — y a-t-il du travail non sauvegardé ? Le dire tout de suite.
+
+### Pendant et en fin de session
+- Commiter et pousser après chaque bloc de travail abouti, et systématiquement avant de terminer.
+- Ne jamais laisser une session se clore avec des commits non poussés ou des fichiers non commités.
+- Le rappeler même si l'utilisateur ne le demande pas. C'est le seul point où insister est attendu.
+
+### Avant chaque push
+- Aucun secret dans le dépôt : `.env`, `.env.local`, `.dev.vars`, `*.p8`, `*.pem`, clés privées, jetons.
+- Aucun fichier de plus de 100 Mo (GitHub refuse le push) ni `node_modules`, `dist`, `.next`, `.wrangler`, `captures`.
